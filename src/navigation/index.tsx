@@ -4,8 +4,8 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import { DarkTheme, DefaultTheme, NavigationContainer } from '@react-navigation/native'
 import { RootStackParamList } from '../types/Navigation'
 import { Setting } from '../screens/Setting/Setting'
-import { Download } from '../screens/Download/Download' 
-import { DownloadList } from '../screens/DownloadList/DownloadList'
+import { Download } from '../screens/DownLoad/Download' 
+import { DownloadList } from '../screens/DownLoadList/DownloadList'
 
 const Stack = createNativeStackNavigator<RootStackParamList>()
 
