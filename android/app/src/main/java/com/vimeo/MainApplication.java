@@ -9,6 +9,13 @@ import com.facebook.react.defaults.DefaultNewArchitectureEntryPoint;
 import com.facebook.react.defaults.DefaultReactNativeHost;
 import com.facebook.soloader.SoLoader;
 import java.util.List;
+import com.google.firebase.FirebaseApp;
+import com.google.firebase.analytics.FirebaseAnalytics;
+import com.google.firebase.crashlytics.FirebaseCrashlytics;
+
+import com.google.android.gms.ads.MobileAds;
+import com.google.android.gms.ads.initialization.InitializationStatus;
+import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
 
 public class MainApplication extends Application implements ReactApplication {
 
@@ -52,11 +59,23 @@ public class MainApplication extends Application implements ReactApplication {
   @Override
   public void onCreate() {
     super.onCreate();
-    SoLoader.init(this, /* native exopackage */ false);
-    if (BuildConfig.IS_NEW_ARCHITECTURE_ENABLED) {
-      // If you opted-in for the New Architecture, we load the native entry point for this app.
-      DefaultNewArchitectureEntryPoint.load();
+    try{
+      FirebaseApp.initializeApp(this);
+      MobileAds.initialize(this, new OnInitializationCompleteListener() {
+        @Override
+        public void onInitializationComplete(InitializationStatus initializationStatus) {
+        }
+      });
+      SoLoader.init(this, /* native exopackage */ false);
+      if (BuildConfig.IS_NEW_ARCHITECTURE_ENABLED) {
+        // If you opted-in for the New Architecture, we load the native entry point for this app.
+        DefaultNewArchitectureEntryPoint.load();
+      }
+      FirebaseAnalytics mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
+      mFirebaseAnalytics.logEvent("on_create", null);
+      ReactNativeFlipper.initializeFlipper(this, getReactNativeHost().getReactInstanceManager());
+    }catch(Exception e){
+      throw new RuntimeException("Test Crash");
     }
-    ReactNativeFlipper.initializeFlipper(this, getReactNativeHost().getReactInstanceManager());
   }
 }
