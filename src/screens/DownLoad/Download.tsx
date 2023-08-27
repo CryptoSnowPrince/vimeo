@@ -43,6 +43,14 @@ export const Download = () => {
             value: '1440'
         },
         {
+            content: 'm4a',
+            value: 'm4a'
+        },
+        {
+            content: 'mp3',
+            value: 'mp3'
+        },
+        {
             content: 'WEBM - 4K',
             value: '4k'
         },
@@ -272,44 +280,6 @@ export const Download = () => {
                         }
                     </TouchableOpacity>
                 </View>
-                {videoInfo && <View style={[styles.body, { marginTop: 17 }]}>
-                    <View style={styles.downloadState}>
-                        <Image
-                            source={{ uri: videoInfo.image }}
-                            style={styles.image}
-                            resizeMode='cover'
-                        />
-                        <View style={{ marginLeft: horizontalScale(16) }}>
-                            <Text style={styles.videoTitleText}>{videoInfo.title}</Text>
-                            <Text style={styles.videoUrlText}>{downloadUri}</Text>
-                        </View>
-                    </View>
-                    <View style={styles.downloadProgress}>
-                        <View style={[styles.rowSpaceBetween, { marginBottom: 8 }]}>
-                            <Text style={styles.stateText}>{isConverting ? 'Converting' : isDownloading ? 'Downloading' : isCompleted ? '' : 'Converted'}</Text>
-                            <Text style={styles.progressText}>{Math.floor(progressValue / 10) + '%'}</Text>
-                        </View>
-                        <Progress.Bar
-                            progress={progressValue / 1000}
-                            height={4}
-                            width={horizontalScale(267)}
-                            borderWidth={0}
-                            animated={false}
-                            useNativeDriver={true}
-                            color={Colors.sky}
-                            unfilledColor={Colors.mercury}
-                        />
-                    </View>
-                    <TouchableOpacity
-                        disabled={isConverting || isDownloading || isCompleted}
-                        style={[styles.downloadButton, { opacity: (isConverting || isDownloading) ? 0.3 : 1 }]}
-                        onPress={downloadMedia}
-                    >
-                        <Text style={[styles.downloadButtonText, { color: (isConverting || isDownloading) ? Colors.dark : Colors.white }]}>
-                            {isCompleted ? 'Download Completed' : 'Download'}
-                        </Text>
-                    </TouchableOpacity>
-                </View>}
                 {videoInfo && <View style={[styles.body, { marginTop: 17 }]}>
                     <View style={styles.downloadState}>
                         <Image
