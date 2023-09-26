@@ -23,7 +23,7 @@ public class AdViewModule extends ViewGroupManager<AdView> {
     if (adView == null) {
       adView = new AdView(reactContext);
       adView.setAdSize(AdSize.BANNER);
-      adView.setAdUnitId("ca-app-pub-3550046978734072/5432301483");
+      adView.setAdUnitId("ca-app-pub-3940256099942544/1033173712");
 
       AdRequest adRequest = new AdRequest.Builder().build();
       adView.loadAd(adRequest);
@@ -37,7 +37,7 @@ public class AdViewModule extends ViewGroupManager<AdView> {
     return adView;
   }
 
-  @ReactProp(name = "ca-app-pub-3550046978734072/5432301483")
+  @ReactProp(name = "unitId")
   public void setAdUnitId(AdView adView, String adUnitId) {
     adView.setAdUnitId(adUnitId);
     AdRequest adRequest = new AdRequest.Builder().build();
