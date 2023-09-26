@@ -4,6 +4,8 @@ Required Dev Tools:
 	Node 16.20
 	jdk-17.0.7
 	android-studio-2022.2.1.20
+	add ENV variables:
+	ANDROID_HOME=C:/Users/%USERNAME%/AppData/Local/Android/Sdk
 
 How to configure project: 
 	npm install
