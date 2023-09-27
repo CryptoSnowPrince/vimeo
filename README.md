@@ -1,6 +1,6 @@
 # vimeo
 
-Required Dev Tools: 
+Required Dev Tools & Set up ENV: 
 	Node 16.20
 	jdk-17.0.7
 	android-studio-2022.2.1.20
@@ -8,6 +8,7 @@ Required Dev Tools:
 	ANDROID_HOME=C:/Users/%USERNAME%/AppData/Local/Android/Sdk
 	ADD emulator path on Path
 	Path=C:\Users\tguser\AppData\Local\Android\Sdk\emulator
+	Android Emulator: Pixel 6 API 34
 
 How to configure project: 
 	npm install
