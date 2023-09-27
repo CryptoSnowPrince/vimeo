@@ -8,7 +8,7 @@ Required Dev Tools & Set up ENV:
 	ANDROID_HOME=C:/Users/%USERNAME%/AppData/Local/Android/Sdk
 	ADD emulator path on Path
 	Path=C:\Users\tguser\AppData\Local\Android\Sdk\emulator
-	Android Emulator: Pixel 6 API 34
+	Android Emulator: Pixel 6 API 34(Android API 34 Google APIs | x86_64)
 
 How to configure project: 
 	npm install
