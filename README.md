@@ -6,6 +6,8 @@ Required Dev Tools:
 	android-studio-2022.2.1.20
 	add ENV variables:
 	ANDROID_HOME=C:/Users/%USERNAME%/AppData/Local/Android/Sdk
+	ADD emulator path on Path
+	Path=C:\Users\tguser\AppData\Local\Android\Sdk\emulator
 
 How to configure project: 
 	npm install
